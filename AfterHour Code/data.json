@@ -1,0 +1,32 @@
+[
+    {
+      "id": "1",
+      "user": "Bobdog",
+      "balance": "$232.3K",
+      "time": "3h",
+      "title": "Big fan of dividends now",
+      "content": "I see everyone banking on $MSTY dividends. I see your $MSTY, and raise you one $SQQQ. $0.48 per share baby!",
+      "transactions": [
+        { "type": "dividend", "stock": "YINN", "amount": "+$22.99", "status": "Pending", "date": "Apr 1, 2025" },
+        { "type": "dividend", "stock": "SQQQ", "amount": "+$578.76", "status": "Pending", "date": "Apr 1, 2025" },
+        { "type": "buy", "stock": "CRWV IPO", "amount": "-$4,000.00", "status": "Queued", "date": "Mar 26, 2025", "shares": "100 Shares" }
+      ],
+      "likes": 17,
+      "comments": 22,
+      "shares": 1,
+      "bookmarks": 2
+    },
+    {
+      "id": "2",
+      "user": "LANDO",
+      "balance": "$8.2K",
+      "time": "3h",
+      "title": "What’s going into my NEW ROTH?",
+      "content": "Thanks to @finkle & @TRON for the picks!",
+      "likes": 34,
+      "comments": 10,
+      "shares": 5,
+      "bookmarks": 1
+    }
+  ]
+  
