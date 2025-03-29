@@ -9,15 +9,18 @@ export const COLORS = {
   GRAY: '#888888',
   GREEN: '#4CAF50',
   RED: '#F44336',
+  BLUE: '#3B82F6', // Blue for comments/bookmarks
+  GOLD: '#FFD700', // Gold tint for high-value balances
 };
 
 const AppStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.BACKGROUND_DARK,
-    justifyContent: 'center',  // ✅ Center content vertically
-    alignItems: 'center',  // ✅ Center content horizontally
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+
   // Top Bar Styles
   topBar: {
     flexDirection: 'row',
@@ -71,8 +74,14 @@ const AppStyles = StyleSheet.create({
   postCard: {
     backgroundColor: COLORS.SECONDARY_DARK,
     padding: 15,
-    marginVertical: 5,
+    marginVertical: 10, // Increased spacing between posts
+    borderRadius: 10,
+    shadowColor: COLORS.WHITE,
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 5, // Adds depth on Android
   },
+
   postHeader: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -88,26 +97,48 @@ const AppStyles = StyleSheet.create({
     flex: 1,
   },
   username: {
-    color: COLORS.WHITE,
+    color: COLORS.PRIMARY_PURPLE, // Tinted username
     fontWeight: 'bold',
   },
   userValue: {
     color: COLORS.GREEN,
   },
+  userBalance: {
+    color: COLORS.GOLD, // Gold balance text for impact
+    fontSize: 14,
+    fontWeight: '600',
+  },
   postTime: {
     color: COLORS.GRAY,
+    fontSize: 12,
   },
+
+  postTitle: {
+    fontWeight: 'bold',
+    color: COLORS.WHITE,
+    fontSize: 16,
+    marginBottom: 5,
+  },
+
   postContent: {
     color: COLORS.WHITE,
     marginBottom: 10,
+    fontSize: 14,
   },
+
   postInteractions: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginTop: 5,
   },
+
   interactionIcon: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  interactionText: {
+    color: COLORS.WHITE,
+    marginLeft: 5,
   },
 
   // Bottom Navigation Styles
@@ -140,4 +171,4 @@ const AppStyles = StyleSheet.create({
   },
 });
 
-export default AppStyles;
+export default AppStyles
