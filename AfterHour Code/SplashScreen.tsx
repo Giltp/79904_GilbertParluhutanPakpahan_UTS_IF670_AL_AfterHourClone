@@ -11,7 +11,7 @@ const SplashScreen = ({ navigation }) => {
       useNativeDriver: true,
     }).start();
 
-    const timer = setTimeout(() => navigation.replace('Home'), 3000);
+    const timer = setTimeout(() => navigation.replace('Main'), 3000);
     return () => clearTimeout(timer);
   }, [navigation]);
 

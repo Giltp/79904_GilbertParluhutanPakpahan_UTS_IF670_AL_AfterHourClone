@@ -17,11 +17,150 @@ const AppStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.BACKGROUND_DARK,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 
-  // Top Bar Styles
+  // 🔹 Search Bar
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.SECONDARY_DARK,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderRadius: 8,
+    margin: 15,
+  },
+  searchInput: {
+    flex: 1,
+    color: COLORS.WHITE,
+    fontSize: 16,
+  },
+
+  // 🔹 Topics Section
+  topicsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+  },
+  topicButton: {
+    backgroundColor: COLORS.PRIMARY_PURPLE,
+    borderRadius: 15,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    margin: 5,
+  },
+  topicText: {
+    color: COLORS.WHITE,
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+
+  // 🔹 Section Titles
+  sectionTitle: {
+    color: COLORS.WHITE,
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 15,
+    marginTop: 20,
+  },
+
+  // 🔹 Trader Card
+  traderCard: {
+    backgroundColor: COLORS.SECONDARY_DARK,
+    padding: 15,
+    borderRadius: 10,
+    margin: 10,
+    alignItems: 'center',
+    width: 150,
+  },
+  traderName: {
+    color: COLORS.PRIMARY_PURPLE,
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  traderBalance: {
+    color: COLORS.GOLD,
+    fontSize: 14,
+    marginVertical: 5,
+  },
+  traderTips: {
+    color: COLORS.GREEN,
+    fontSize: 14,
+    marginVertical: 5,
+  },
+  followButton: {
+    backgroundColor: COLORS.BLUE,
+    borderRadius: 8,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    marginTop: 5,
+  },
+  followText: {
+    color: COLORS.WHITE,
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+
+  // 🔹 Stock Cards
+  stockItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 15,
+    backgroundColor: COLORS.SECONDARY_DARK,
+    marginVertical: 5,
+    borderRadius: 10,
+  },
+  stockLogo: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    marginRight: 10,
+  },
+  stockText: {
+    color: COLORS.WHITE,
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  stockDetails: {
+    color: COLORS.GRAY,
+    fontSize: 12,
+  },
+
+  // 🔹 Most Owned & Watched Stocks
+  stockCard: {
+    backgroundColor: COLORS.SECONDARY_DARK,
+    padding: 15,
+    borderRadius: 10,
+    margin: 10,
+    alignItems: 'center',
+    width: 150,
+  },
+  stockName: {
+    color: COLORS.WHITE,
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  stockSubtext: {
+    color: COLORS.GRAY,
+    fontSize: 12,
+    marginVertical: 5,
+  },
+  addButton: {
+    backgroundColor: COLORS.PRIMARY_PURPLE,
+    borderRadius: 8,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    marginTop: 5,
+  },
+  addButtonText: {
+    color: COLORS.WHITE,
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+
+  // ✅ Restored Styles from HomeScreen
+
+  // 🔹 Top Bar Styles
   topBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -47,7 +186,7 @@ const AppStyles = StyleSheet.create({
     fontSize: 12,
   },
 
-  // Navigation Tabs Styles
+  // 🔹 Navigation Tabs Styles
   navigationTabs: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -70,18 +209,17 @@ const AppStyles = StyleSheet.create({
     color: COLORS.GRAY,
   },
 
-  // Post Card Styles
+  // 🔹 Post Card Styles
   postCard: {
     backgroundColor: COLORS.SECONDARY_DARK,
     padding: 15,
-    marginVertical: 10, // Increased spacing between posts
+    marginVertical: 10,
     borderRadius: 10,
     shadowColor: COLORS.WHITE,
     shadowOpacity: 0.2,
     shadowOffset: { width: 0, height: 2 },
     elevation: 5, // Adds depth on Android
   },
-
   postHeader: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -97,14 +235,14 @@ const AppStyles = StyleSheet.create({
     flex: 1,
   },
   username: {
-    color: COLORS.PRIMARY_PURPLE, // Tinted username
+    color: COLORS.PRIMARY_PURPLE,
     fontWeight: 'bold',
   },
   userValue: {
     color: COLORS.GREEN,
   },
   userBalance: {
-    color: COLORS.GOLD, // Gold balance text for impact
+    color: COLORS.GOLD,
     fontSize: 14,
     fontWeight: '600',
   },
@@ -112,26 +250,22 @@ const AppStyles = StyleSheet.create({
     color: COLORS.GRAY,
     fontSize: 12,
   },
-
   postTitle: {
     fontWeight: 'bold',
     color: COLORS.WHITE,
     fontSize: 16,
     marginBottom: 5,
   },
-
   postContent: {
     color: COLORS.WHITE,
     marginBottom: 10,
     fontSize: 14,
   },
-
   postInteractions: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 5,
   },
-
   interactionIcon: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -141,7 +275,7 @@ const AppStyles = StyleSheet.create({
     marginLeft: 5,
   },
 
-  // Bottom Navigation Styles
+  // 🔹 Bottom Navigation Styles
   bottomNavigation: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -171,4 +305,4 @@ const AppStyles = StyleSheet.create({
   },
 });
 
-export default AppStyles
+export default AppStyles;

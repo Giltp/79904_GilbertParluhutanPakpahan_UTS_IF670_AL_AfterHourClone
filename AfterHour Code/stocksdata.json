@@ -1,0 +1,35 @@
+[
+    {
+      "id": "1",
+      "ticker": "TSLA",
+      "company": "Tesla",
+      "owned_by": "25.6K",
+      "total_balance": "$1.2B",
+      "watchlist_count": "12.8K"
+    },
+    {
+      "id": "2",
+      "ticker": "AAPL",
+      "company": "Apple",
+      "owned_by": "30.1K",
+      "total_balance": "$980M",
+      "watchlist_count": "10.5K"
+    },
+    {
+      "id": "3",
+      "ticker": "MSFT",
+      "company": "Microsoft",
+      "owned_by": "20.2K",
+      "total_balance": "$890M",
+      "watchlist_count": "9.3K"
+    },
+    {
+      "id": "4",
+      "ticker": "NVDA",
+      "company": "NVIDIA",
+      "owned_by": "18.3K",
+      "total_balance": "$760M",
+      "watchlist_count": "15.0K"
+    }
+  ]
+  

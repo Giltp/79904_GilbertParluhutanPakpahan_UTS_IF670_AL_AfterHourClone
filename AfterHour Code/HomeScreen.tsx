@@ -24,9 +24,6 @@ const HomeScreen = () => {
           <PostCard key={post.id} post={post} />
         ))}
       </ScrollView>
-
-      {/* Bottom Navigation Bar (Fixed Position) */}
-      <BottomNavBar />
     </View>
   );
 };
