@@ -7,9 +7,7 @@ const NavigationTabs = ({ selectedTab, setSelectedTab }) => {
     <View style={AppStyles.navigationTabs}>
       {["For You", "Following"].map((tab) => (
         <TouchableOpacity key={tab} onPress={() => setSelectedTab(tab)}>
-          <Text style={selectedTab === tab ? AppStyles.activeTabText : AppStyles.inactiveTabText}>
-            {tab}
-          </Text>
+          <Text style={selectedTab === tab ? AppStyles.activeTabText : AppStyles.inactiveTabText}>{tab}</Text>
           {selectedTab === tab && <View style={AppStyles.activeTab} />}
         </TouchableOpacity>
       ))}

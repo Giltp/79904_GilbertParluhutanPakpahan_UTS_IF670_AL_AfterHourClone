@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "username": "investinq",
+      "avatar": "https://example.com/avatar1.png",
+      "message": "Stock Market Today: 🌊 Tariff Tsunami + Amazon Submits Bid For TikTok...",
+      "timeAgo": "6h",
+      "type": "posts"
+    },
+    {
+      "id": 2,
+      "username": "based",
+      "avatar": "https://example.com/avatar2.png",
+      "message": "DAILY 🔑 SPY LEVELS AND ENTRIES 4/2",
+      "timeAgo": "18h",
+      "type": "posts"
+    },
+    {
+      "id": 3,
+      "username": "investinq",
+      "avatar": "https://example.com/avatar1.png",
+      "message": "Stocks Making The Biggest Moves Pre Market 📈📉",
+      "timeAgo": "18h",
+      "type": "posts"
+    },
+    {
+      "id": 4,
+      "username": "based",
+      "avatar": "https://example.com/avatar2.png",
+      "message": "BASED MOVING DAY",
+      "timeAgo": "1d",
+      "type": "posts"
+    },
+    {
+      "id": 5,
+      "username": "investinq",
+      "avatar": "https://example.com/avatar1.png",
+      "message": "Stocks Making The Biggest Moves Pre Market 📈📉",
+      "timeAgo": "24h",
+      "type": "posts"
+    },
+    {
+      "id": 6,
+      "username": "investinq",
+      "avatar": "https://example.com/avatar1.png",
+      "message": "Stocks Making The Biggest Moves Pre Market 📈📉",
+      "timeAgo": "5h",
+      "type": "posts"
+    },
+    {
+      "id": 7,
+      "username": "investinq",
+      "avatar": "https://example.com/avatar1.png",
+      "message": "Stocks Making The Biggest Moves Pre Market 📈📉",
+      "timeAgo": "1h",
+      "type": "comments"
+    }
+  ]
+  

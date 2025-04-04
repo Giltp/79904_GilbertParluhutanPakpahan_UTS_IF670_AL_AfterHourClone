@@ -5,7 +5,9 @@
       "company": "Tesla",
       "owned_by": "25.6K",
       "total_balance": "$1.2B",
-      "watchlist_count": "12.8K"
+      "watchlist_count": "12.8K",
+      "last_message": "ElonMuskFan: To the moon! 🚀",
+      "last_message_time": "2h"
     },
     {
       "id": "2",
@@ -13,7 +15,9 @@
       "company": "Apple",
       "owned_by": "30.1K",
       "total_balance": "$980M",
-      "watchlist_count": "10.5K"
+      "watchlist_count": "10.5K",
+      "last_message": "DaddyBux: Oh no! Again!?",
+      "last_message_time": "14h"
     },
     {
       "id": "3",
@@ -21,7 +25,9 @@
       "company": "Microsoft",
       "owned_by": "20.2K",
       "total_balance": "$890M",
-      "watchlist_count": "9.3K"
+      "watchlist_count": "9.3K",
+      "last_message": "BillGatesFan: AI is the future!",
+      "last_message_time": "1d"
     },
     {
       "id": "4",
@@ -29,7 +35,49 @@
       "company": "NVIDIA",
       "owned_by": "18.3K",
       "total_balance": "$760M",
-      "watchlist_count": "15.0K"
+      "watchlist_count": "15.0K",
+      "last_message": "GamersUnite: RTX 5090 when?",
+      "last_message_time": "3d"
+    },
+    {
+      "id": "5",
+      "ticker": "GOOGL",
+      "company": "Google",
+      "owned_by": "15.7K",
+      "total_balance": "$680M",
+      "watchlist_count": "8.2K",
+      "last_message": "SearchMaster: Ads everywhere 😵",
+      "last_message_time": "5d"
+    },
+    {
+      "id": "6",
+      "ticker": "AMZN",
+      "company": "Amazon",
+      "owned_by": "28.9K",
+      "total_balance": "$1.1B",
+      "watchlist_count": "11.3K",
+      "last_message": "PrimeDude: Where’s my package? 📦",
+      "last_message_time": "8h"
+    },
+    {
+      "id": "7",
+      "ticker": "META",
+      "company": "Meta Platforms",
+      "owned_by": "13.4K",
+      "total_balance": "$540M",
+      "watchlist_count": "7.1K",
+      "last_message": "MetaverseBro: VR is dead?",
+      "last_message_time": "2d"
+    },
+    {
+      "id": "8",
+      "ticker": "NFLX",
+      "company": "Netflix",
+      "owned_by": "11.9K",
+      "total_balance": "$450M",
+      "watchlist_count": "6.5K",
+      "last_message": "BingeWatcher: New season when?",
+      "last_message_time": "6h"
     }
   ]
   

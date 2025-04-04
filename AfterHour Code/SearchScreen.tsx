@@ -21,11 +21,16 @@ const topics = [
   { id: '12', name: 'News', icon: '📰' },
 ];
 
+// Stock Logos
 const stockLogos = {
-  TSLA: require('../assets/Stocks Logo/Tesla Stocks Logo.png'),
-  AAPL: require('../assets/Stocks Logo/Apple Stocks Logo.png'),
-  MSFT: require('../assets/Stocks Logo/Microsoft Stocks Logo.png'),
-  NVDA: require('../assets/Stocks Logo/Nvidia Stocks Logo.png'),
+  TSLA: require("../assets/Stocks Logo/Tesla Stocks Logo.png"),
+  AAPL: require("../assets/Stocks Logo/Apple Stocks Logo.png"),
+  MSFT: require("../assets/Stocks Logo/Microsoft Stocks Logo.png"),
+  NVDA: require("../assets/Stocks Logo/Nvidia Stocks Logo.png"),
+  GOOGL: require("../assets/Stocks Logo/Google Stocks Logo.png"),
+  AMZN: require("../assets/Stocks Logo/Amazon Stocks Logo.png"),
+  META: require("../assets/Stocks Logo/Meta Stocks Logo.png"),
+  NFLX: require("../assets/Stocks Logo/Netflix Stocks Logo.png")
 };
 
 // ✅ Convert formatted strings (like "$23.2K") to numbers

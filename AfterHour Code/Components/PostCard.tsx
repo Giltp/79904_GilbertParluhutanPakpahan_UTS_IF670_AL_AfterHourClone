@@ -1,3 +1,4 @@
+import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import AppStyles, { COLORS } from "../StyleSheets"; // Import styles and colors
@@ -9,22 +10,30 @@ const PostCard = ({ post }) => {
       <View style={AppStyles.postHeader}>
         <Image source={{ uri: post.profilePic }} style={AppStyles.profilePic} />
         <View style={AppStyles.postUserInfo}>
-          <Text style={AppStyles.username}>
-            {post.user}
+          {/* Fixed username display with verification icon */}
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={AppStyles.username}>{post.user}</Text>
             {post.verified && (
-              <FontAwesome name="check-circle" size={14} color={COLORS.GREEN} />
+              <FontAwesome 
+                name="check-circle" 
+                size={14} 
+                color={COLORS.GREEN} 
+                style={{ marginLeft: 4 }} 
+              />
             )}
-          </Text>
+          </View>
           <Text style={AppStyles.userBalance}>{post.balance}</Text>
         </View>
         <Text style={AppStyles.postTime}>{post.time}</Text>
       </View>
 
-      {/* Post Title */}
-      <Text style={AppStyles.postTitle}>{post.title}</Text>
+      <View>
+        {/* Post Title */}
+        <Text style={AppStyles.postTitle}>{String(post.title)}</Text>
 
-      {/* Post Content */}
-      <Text style={AppStyles.postContent}>{post.content}</Text>
+        {/* Post Content */}
+        <Text style={AppStyles.postContent}>{String(post.content)}</Text>
+      </View>
 
       {/* Post Actions */}
       <View style={AppStyles.postInteractions}>

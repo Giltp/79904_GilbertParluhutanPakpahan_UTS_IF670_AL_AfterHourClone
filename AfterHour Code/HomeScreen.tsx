@@ -4,7 +4,6 @@ import AppStyles from "./StyleSheets";
 import TopBar from "./Components/TopBar";
 import NavigationTabs from "./Components/NavigationTabs";
 import PostCard from "./Components/PostCard";
-import BottomNavBar from "./Components/BottomNavBar";
 import postData from "./data.json"; // ✅ Load dummy data
 
 const HomeScreen = () => {
