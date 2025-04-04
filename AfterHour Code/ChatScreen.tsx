@@ -8,12 +8,6 @@ import AppStyles from "./StyleSheets";
 import JoinChatScreen from "./JoinChatScreen";
 import TopBar from "./Components/TopBar"; // ✅ Import Top Bar
 
-// Define the type for the stack navigator
-type ChatStackParamList = {
-  ChatList: undefined;
-  JoinChat: { setJoinedChats: React.Dispatch<React.SetStateAction<any[]>> };
-};
-
 // Stock Logos
 const stockLogos = {
   TSLA: require("../assets/Stocks Logo/Tesla Stocks Logo.png"),
@@ -25,9 +19,6 @@ const stockLogos = {
   META: require("../assets/Stocks Logo/Meta Stocks Logo.png"),
   NFLX: require("../assets/Stocks Logo/Netflix Stocks Logo.png")
 };
-
-// Stack Navigator for Chats
-const Stack = createStackNavigator<ChatStackParamList>();
 
 const ChatListScreen = ({ navigation }) => {
   const [joinedChats, setJoinedChats] = useState([]);
@@ -56,7 +47,7 @@ const ChatListScreen = ({ navigation }) => {
       {/* ✅ Floating (+) Button to Open Join Chat */}
       <TouchableOpacity
         style={AppStyles.floatingButton}
-        onPress={() => navigation.navigate("JoinChat", { setJoinedChats })}
+        onPress={() => navigation.navigate("JoinChat", { id: "some-id", setJoinedChats })}
       >
         <Ionicons name="add" size={30} color="white" />
       </TouchableOpacity>
@@ -64,14 +55,4 @@ const ChatListScreen = ({ navigation }) => {
   );
 };
 
-// Stack Navigator inside the Chat Screen
-const ChatsScreen = () => {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false, presentation: "modal" }}>
-      <Stack.Screen name="ChatList" component={ChatListScreen} />
-      <Stack.Screen name="JoinChat" component={JoinChatScreen} />
-    </Stack.Navigator>
-  );
-};
-
-export default ChatsScreen;
+export default ChatListScreen;

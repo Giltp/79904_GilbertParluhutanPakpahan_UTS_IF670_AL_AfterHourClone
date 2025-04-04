@@ -3,6 +3,11 @@ import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import AppStyles from "./StyleSheets";
 import stocksData from "./stocksdata.json";
+import { RouteProp } from "@react-navigation/native";
+
+type RootStackParamList = {
+    JoinChatScreen: { setJoinedChats: (chats: any) => void };
+  };
 
 // Stock Logos
 const stockLogos = {
@@ -16,20 +21,18 @@ const stockLogos = {
     NFLX: require("../assets/Stocks Logo/Netflix Stocks Logo.png")
   };
 
-const JoinChatScreen = () => {
-  const route = useRoute();
-  const navigation = useNavigation();
-  const { setJoinedChats } = route.params;
-
-  // ✅ State for available chats
-  const [availableChats, setAvailableChats] = useState(stocksData);
-
-  // ✅ Function to join a chat
-  const joinChat = (chat) => {
-    setJoinedChats((prevChats) => [...prevChats, chat]); // Add to ChatScreen.tsx
-    setAvailableChats((prevChats) => prevChats.filter((item) => item.id !== chat.id)); // Remove from JoinChatScreen
-  };
-
+  const JoinChatScreen = () => {
+    const route = useRoute<RouteProp<RootStackParamList, "JoinChatScreen">>();
+    const navigation = useNavigation();
+    const { setJoinedChats } = route.params; // ✅ No more TypeScript error
+  
+    const [availableChats, setAvailableChats] = useState(stocksData);
+  
+    const joinChat = (chat) => {
+      setJoinedChats((prevChats) => [...prevChats, chat]); // Add to ChatScreen.tsx
+      setAvailableChats((prevChats) => prevChats.filter((item) => item.id !== chat.id)); // Remove from JoinChatScreen
+    };
+    
   return (
     <View style={AppStyles.container}>
       <Text style={AppStyles.screenTitle}>Join Chat</Text>
