@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import AppStyles, { COLORS } from "../StyleSheets";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { useNavigation, DrawerActions } from "@react-navigation/native";
 
 interface TopBarProps {
-  title?: string; // ✅ Make title optional
+  title?: string;
   showIcons?: boolean;
 }
 
 const TopBar: React.FC<TopBarProps> = ({ title, showIcons = true }) => {
   const [time, setTime] = useState("");
+  const navigation = useNavigation();
 
   useEffect(() => {
     const updateTime = () => {
@@ -20,17 +22,26 @@ const TopBar: React.FC<TopBarProps> = ({ title, showIcons = true }) => {
       setTime(`${hours}:${minutes}:${seconds}`);
     };
 
-    // Update time every second
     const timerInterval = setInterval(updateTime, 1000);
-    updateTime(); // Run immediately
+    updateTime();
 
-    return () => clearInterval(timerInterval); // Cleanup
+    return () => clearInterval(timerInterval);
   }, []);
+
+  const handleDrawerToggle = () => {
+    navigation.dispatch(DrawerActions.openDrawer());
+  };
 
   return (
     <View style={AppStyles.topBar}>
-      {/* Left Icon (Only Show if showIcons is true) */}
-      {showIcons && <Icon name="diamond" size={24} color={COLORS.PRIMARY_PURPLE} />}
+      {/* Left Icon - Open Drawer */}
+      {showIcons ? (
+        <TouchableOpacity onPress={handleDrawerToggle}>
+          <Icon name="diamond" size={24} color={COLORS.PRIMARY_PURPLE} />
+        </TouchableOpacity>
+      ) : (
+        <View style={{ width: 24 }} />
+      )}
 
       {/* Title or Pre-market Timer */}
       {title ? (
@@ -38,11 +49,11 @@ const TopBar: React.FC<TopBarProps> = ({ title, showIcons = true }) => {
       ) : (
         <View style={AppStyles.marketTimerContainer}>
           <Text style={AppStyles.marketTimer}>Pre-market</Text>
-          <Text style={AppStyles.marketTimerText}>{time}</Text> {/* ✅ Dynamic time */}
+          <Text style={AppStyles.marketTimerText}>{time}</Text>
         </View>
       )}
 
-      {/* Right Icon (Only Show if showIcons is true) */}
+      {/* Right Icon */}
       {showIcons && <Icon name="eye" size={24} color={COLORS.WHITE} />}
     </View>
   );
