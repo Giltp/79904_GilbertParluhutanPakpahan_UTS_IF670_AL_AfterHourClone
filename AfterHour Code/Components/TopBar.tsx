@@ -32,6 +32,10 @@ const TopBar: React.FC<TopBarProps> = ({ title, showIcons = true }) => {
     navigation.dispatch(DrawerActions.openDrawer());
   };
 
+  const handleEyeIconPress = () => {
+    navigation.navigate('Watchlists');
+  };
+
   return (
     <View style={AppStyles.topBar}>
       {/* Left Icon - Open Drawer */}
@@ -54,7 +58,11 @@ const TopBar: React.FC<TopBarProps> = ({ title, showIcons = true }) => {
       )}
 
       {/* Right Icon */}
-      {showIcons && <Icon name="eye" size={24} color={COLORS.WHITE} />}
+      {showIcons && (
+        <TouchableOpacity onPress={handleEyeIconPress}>
+          <Icon name="eye" size={24} color={COLORS.WHITE} />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

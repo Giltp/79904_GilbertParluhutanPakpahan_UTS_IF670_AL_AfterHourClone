@@ -19,7 +19,7 @@ const stockLogos = {
     AMZN: require("../assets/Stocks Logo/Amazon Stocks Logo.png"),
     META: require("../assets/Stocks Logo/Meta Stocks Logo.png"),
     NFLX: require("../assets/Stocks Logo/Netflix Stocks Logo.png")
-  };
+  };  
 
   const JoinChatScreen = () => {
     const route = useRoute<RouteProp<RootStackParamList, "JoinChatScreen">>();

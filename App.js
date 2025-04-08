@@ -18,6 +18,8 @@
   import ProfileScreen from './AfterHour Code/ProfileScreen';
   import SettingsScreen from './AfterHour Code/SettingScreen';
   import CustomDrawer from './AfterHour Code/CustomDrawer';
+  import WatchlistsScreen from './AfterHour Code/WatchlistsScreen';
+  import AddWatchlistsScreen from './AfterHour Code/AddWatchlistsScreen';
 
   const Stack = createStackNavigator();
   const Tab = createBottomTabNavigator();
@@ -118,6 +120,8 @@
             <Stack.Screen name="Main" component={DrawerNavigator} />
             <Stack.Screen name="CreatePost" component={CreatePostScreen} options={{ presentation: 'modal' }} />
             <Stack.Screen name="PostTopics" component={PostTopicsScreen} options={{ presentation: 'modal' }} />
+            <Stack.Screen name="Watchlists" component={WatchlistsScreen} />
+            <Stack.Screen name="AddWatchlists" component={AddWatchlistsScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>

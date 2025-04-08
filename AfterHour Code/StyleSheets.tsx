@@ -14,12 +14,83 @@ export const COLORS = {
 };
 
 const AppStyles = StyleSheet.create({
+  // =============================================
+  // 🔹 COMMON STYLES (SHARED ACROSS SCREENS)
+  // =============================================
   container: {
     flex: 1,
     backgroundColor: COLORS.BACKGROUND_DARK,
   },
-
-  // 🔹 Top Bar Styles
+  
+  // Text styles
+  sectionTitle: {
+    color: COLORS.WHITE,
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 15,
+    marginTop: 20,
+  },
+  screenTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: COLORS.WHITE,
+    textAlign: 'center',
+    marginBottom: 15,
+    marginTop: 20,
+  },
+  
+  // Button styles
+  primaryButton: {
+    backgroundColor: COLORS.PRIMARY_PURPLE,
+    borderRadius: 8,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    marginTop: 5,
+  },
+  primaryButtonText: {
+    color: COLORS.WHITE,
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  
+  // Floating Button
+  floatingButton: {
+    position: "absolute",
+    bottom: 20,
+    right: 20,
+    backgroundColor: COLORS.PRIMARY_PURPLE,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: COLORS.WHITE,
+    shadowOpacity: 0.3,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 5,
+  },
+  
+  // Search Bar
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.SECONDARY_DARK,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderRadius: 8,
+    margin: 15,
+  },
+  searchInput: {
+    flex: 1,
+    color: COLORS.WHITE,
+    fontSize: 16,
+  },
+  
+  // =============================================
+  // 🔹 NAVIGATION & APP STRUCTURE
+  // =============================================
+  
+  // Top Bar Styles
   topBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -39,20 +110,8 @@ const AppStyles = StyleSheet.create({
     width: 30,
     height: 30,
   },
-  marketTimerContainer: {
-    alignItems: 'center',
-  },
-  marketTimer: {
-    color: COLORS.WHITE,
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  marketTimerText: {
-    color: COLORS.GRAY,
-    fontSize: 12,
-  },
-
-  // 🔹 Navigation Tabs Styles
+  
+  // Navigation Tabs
   navigationTabs: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -74,8 +133,123 @@ const AppStyles = StyleSheet.create({
   inactiveTabText: {
     color: COLORS.GRAY,
   },
-
-  // 🔹 Post Card Styles
+  
+  // Bottom Navigation
+  bottomNavigation: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: COLORS.SECONDARY_DARK,
+    paddingVertical: 10,
+  },
+  navItem: {
+    alignItems: 'center',
+  },
+  centerNavItem: {
+    backgroundColor: COLORS.PRIMARY_PURPLE,
+    borderRadius: 30,
+    padding: 10,
+  },
+  notificationBadge: {
+    position: 'absolute',
+    top: -5,
+    right: -5,
+    backgroundColor: COLORS.RED,
+    borderRadius: 10,
+    paddingHorizontal: 5,
+  },
+  notificationText: {
+    color: COLORS.WHITE,
+    fontSize: 10,
+  },
+  
+  // Filter Navigation
+  filterNav: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    paddingVertical: 10,
+    backgroundColor: COLORS.SECONDARY_DARK,
+  },
+  filterButton: {
+    paddingVertical: 8,
+    paddingHorizontal: 15,
+    borderRadius: 20,
+    backgroundColor: COLORS.BACKGROUND_DARK,
+  },
+  activeFilter: {
+    backgroundColor: COLORS.PRIMARY_PURPLE,
+  },
+  filterText: {
+    color: COLORS.WHITE,
+    fontSize: 14,
+    fontWeight: "bold",
+  },
+  activeFilterText: {
+    color: COLORS.WHITE,
+  },
+  
+  // =============================================
+  // 🔹 HOME SCREEN
+  // =============================================
+  
+  // Market Timer
+  marketTimerContainer: {
+    alignItems: 'center',
+  },
+  marketTimer: {
+    color: COLORS.WHITE,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  marketTimerText: {
+    color: COLORS.GRAY,
+    fontSize: 12,
+  },
+  
+  // Topics Section
+  topicsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+  },
+  topicButton: {
+    backgroundColor: COLORS.PRIMARY_PURPLE,
+    borderRadius: 15,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    margin: 5,
+  },
+  topicText: {
+    color: COLORS.WHITE,
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  
+  // Topic Bubbles (Used in multiple screens)
+  topicBubble: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.PRIMARY_PURPLE,
+    borderRadius: 20,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    marginVertical: 4,
+  },
+  addTopicBubble: {
+    backgroundColor: COLORS.PRIMARY_PURPLE,
+  },
+  topicBubbleText: {
+    color: '#fff',
+    fontSize: 14,
+    marginRight: 6,
+  },
+  topicRemove: {
+    color: '#f66',
+    fontSize: 14,
+  },
+  
+  // Post Card Styles
   postCard: {
     backgroundColor: COLORS.SECONDARY_DARK,
     padding: 15,
@@ -84,7 +258,7 @@ const AppStyles = StyleSheet.create({
     shadowColor: COLORS.WHITE,
     shadowOpacity: 0.2,
     shadowOffset: { width: 0, height: 2 },
-    elevation: 5, // Adds depth on Android
+    elevation: 5,
   },
   postHeader: {
     flexDirection: 'row',
@@ -140,82 +314,8 @@ const AppStyles = StyleSheet.create({
     color: COLORS.WHITE,
     marginLeft: 5,
   },
-
-  // 🔹 Bottom Navigation Styles
-  bottomNavigation: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: COLORS.SECONDARY_DARK,
-    paddingVertical: 10,
-  },
-  navItem: {
-    alignItems: 'center',
-  },
-  centerNavItem: {
-    backgroundColor: COLORS.PRIMARY_PURPLE,
-    borderRadius: 30,
-    padding: 10,
-  },
-  notificationBadge: {
-    position: 'absolute',
-    top: -5,
-    right: -5,
-    backgroundColor: COLORS.RED,
-    borderRadius: 10,
-    paddingHorizontal: 5,
-  },
-  notificationText: {
-    color: COLORS.WHITE,
-    fontSize: 10,
-  },
-
-  // 🔹 Search Bar
-  searchBar: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: COLORS.SECONDARY_DARK,
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-    borderRadius: 8,
-    margin: 15,
-  },
-  searchInput: {
-    flex: 1,
-    color: COLORS.WHITE,
-    fontSize: 16,
-  },
-
-  // 🔹 Topics Section
-  topicsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    paddingHorizontal: 10,
-  },
-  topicButton: {
-    backgroundColor: COLORS.PRIMARY_PURPLE,
-    borderRadius: 15,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    margin: 5,
-  },
-  topicText: {
-    color: COLORS.WHITE,
-    fontSize: 14,
-    fontWeight: 'bold',
-  },
-
-  // 🔹 Section Titles
-  sectionTitle: {
-    color: COLORS.WHITE,
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginLeft: 15,
-    marginTop: 20,
-  },
-
-  // 🔹 Trader Card
+  
+  // Trader Card
   traderCard: {
     backgroundColor: COLORS.SECONDARY_DARK,
     padding: 15,
@@ -251,8 +351,12 @@ const AppStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
   },
-
-  // 🔹 Stock Cards
+  
+  // =============================================
+  // 🔹 STOCK & WATCHLIST SCREENS
+  // =============================================
+  
+  // Stock Cards
   stockItem: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -276,8 +380,8 @@ const AppStyles = StyleSheet.create({
     color: COLORS.GRAY,
     fontSize: 12,
   },
-
-  // 🔹 Most Owned & Watched Stocks
+  
+  // Most Owned & Watched Stocks
   stockCard: {
     backgroundColor: COLORS.SECONDARY_DARK,
     padding: 15,
@@ -308,20 +412,50 @@ const AppStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
   },
-
-  // 🔹 Filter Navigation Styles
-  // 🔹 Notification Card Styles
+  
+  // Watchlist specific
+  balanceText: {
+    fontWeight: "bold",
+    fontSize: 16,
+    color: "white",
+  },
+  emptyText: {
+    textAlign: "center",
+    fontSize: 16,
+    color: "#888",
+    marginTop: 40,
+    fontStyle: "italic",
+  },
+  ownedByText: {
+    fontSize: 12,
+    color: "#aaa"
+  },
+  totalBalanceText: {
+    fontSize: 12,
+    color: "#ddd",
+    fontWeight: "bold"
+  },
+  awiconButton: {
+    padding: 10,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  
+  // =============================================
+  // 🔹 NOTIFICATION SCREEN
+  // =============================================
+  
   notificationCard: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: COLORS.SECONDARY_DARK,
     padding: 15,
-    marginVertical: 8, // Adds gap between notifications
-    borderRadius: 12, // Rounded edges
+    marginVertical: 8,
+    borderRadius: 12,
     shadowColor: COLORS.WHITE,
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 1 },
-    elevation: 3, // Depth effect for Android
+    elevation: 3,
   },
   notificationAvatar: {
     width: 50, 
@@ -355,40 +489,11 @@ const AppStyles = StyleSheet.create({
     color: COLORS.GRAY,
     fontSize: 18,
   },
-  filterNav: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    paddingVertical: 10,
-    backgroundColor: COLORS.SECONDARY_DARK,
-  },
-  filterButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 15,
-    borderRadius: 20,
-    backgroundColor: COLORS.BACKGROUND_DARK,
-  },
-  activeFilter: {
-    backgroundColor: COLORS.PRIMARY_PURPLE,
-  },
-  filterText: {
-    color: COLORS.WHITE,
-    fontSize: 14,
-    fontWeight: "bold",
-  },
-  activeFilterText: {
-    color: COLORS.WHITE,
-  },
-
-   // 🔹 Screen Title
-   screenTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: COLORS.WHITE,
-    textAlign: 'center',
-    marginBottom: 15,
-  },
-
-  // 🔹 Cards Screen
+  
+  // =============================================
+  // 🔹 CHAT SCREENS
+  // =============================================
+  
   chatCard: {
     flexDirection: "row",
     alignItems: "center",
@@ -426,9 +531,9 @@ const AppStyles = StyleSheet.create({
     fontSize: 14,
     color: "#aaa",
   },
-
-   // 🔹 Join Chat Card
-   joinChatCard: {
+  
+  // Join Chat Card
+  joinChatCard: {
     flexDirection: "row",
     alignItems: "center",
     paddingVertical: 12,
@@ -439,8 +544,6 @@ const AppStyles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 5,
   },
-
-  // 🔹 Join Button
   joinButton: {
     backgroundColor: COLORS.PRIMARY_PURPLE,
     paddingVertical: 6,
@@ -452,25 +555,6 @@ const AppStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
   },
-
-  // 🔹 Floating Button
-  floatingButton: {
-    position: "absolute",
-    bottom: 20,
-    right: 20,
-    backgroundColor: COLORS.PRIMARY_PURPLE,
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: COLORS.WHITE,
-    shadowOpacity: 0.3,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 5, // For Android shadow
-  },
-
-  // 🔹 Close Button (Exit Join Chat)
   closeButton: {
     marginTop: 15,
     backgroundColor: COLORS.RED,
@@ -484,7 +568,10 @@ const AppStyles = StyleSheet.create({
     fontWeight: "bold",
   },
   
-  // 🔹 Create Post Screen Styles
+  // =============================================
+  // 🔹 CREATE POST SCREEN
+  // =============================================
+  
   createPostContainer: {
     flex: 1,
     backgroundColor: COLORS.BACKGROUND_DARK,
@@ -524,13 +611,11 @@ const AppStyles = StyleSheet.create({
     borderLeftWidth: 4,
     borderLeftColor: '#ff4444',
   },
-  
   alertText: {
     color: '#cc0000',
     fontSize: 14,
     fontWeight: '500',
   },
-  
   contentContainer: {
     padding: 15,
   },
@@ -582,9 +667,8 @@ const AppStyles = StyleSheet.create({
     fontSize: 20,
     color: COLORS.WHITE,
   },
-
   
-  // 🔹 Create Post Topics Modal Screen Styles
+  // Create Post Topics Modal Screen
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
@@ -619,7 +703,6 @@ const AppStyles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
   },
-
   selectedTopicsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -629,158 +712,10 @@ const AppStyles = StyleSheet.create({
     alignItems: 'center',
   },
   
-  topicBubble: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: COLORS.PRIMARY_PURPLE,
-    borderRadius: 20,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    marginVertical: 4,
-  },
+  // =============================================
+  // 🔹 PROFILE SCREEN
+  // =============================================
   
-  addTopicBubble: {
-    backgroundColor: COLORS.PRIMARY_PURPLE,
-  },
-  
-  topicBubbleText: {
-    color: '#fff',
-    fontSize: 14,
-    marginRight: 6,
-  },
-  
-  topicRemove: {
-    color: '#f66',
-    fontSize: 14,
-  },
-
-  // 🔹 Custom Drawer Styles
-  scrollContent: {
-    paddingHorizontal: 16,
-    paddingTop: 20,
-  },
-  drawerheader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  drawerlogo: {
-    color: '#fff',
-    fontSize: 22,
-    fontWeight: 'bold',
-  },
-  logoIcon: {
-    color: '#FFD700',
-  },
-  fireRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  fireIcon: {
-    fontSize: 16,
-    marginRight: 4,
-  },
-  fireText: {
-    color: '#fff',
-    fontSize: 14,
-  },
-  card: {
-    backgroundColor: '#1a1a1a',
-    borderRadius: 12,
-    padding: 16,
-    marginVertical: 16,
-    alignItems: 'center',
-  },
-  avatar: {
-    height: 60,
-    width: 60,
-    borderRadius: 30,
-    marginBottom: 10,
-  },
-  drawerusername: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  followRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '80%',
-    marginTop: 8,
-  },
-  followStat: {
-    color: '#fff',
-    fontWeight: 'bold',
-  },
-  followLabel: {
-    fontWeight: 'normal',
-    color: '#aaa',
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  miniCard: {
-    backgroundColor: '#1a1a1a',
-    borderRadius: 12,
-    padding: 12,
-    width: '48%',
-  },
-  cardLabel: {
-    color: '#aaa',
-    fontSize: 12,
-  },
-  connectText: {
-    color: '#8A4FFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginTop: 4,
-  },
-  walletText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginTop: 4,
-  },
-  navSection: {
-    marginTop: 24,
-  },
-  drawerItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 14,
-  },
-  drawerItemText: {
-    color: '#fff',
-    marginLeft: 12,
-    fontSize: 16,
-  },
-  inviteCard: {
-    backgroundColor: '#1a1a1a',
-    borderRadius: 14,
-    padding: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    margin: 16,
-  },
-  inviteText: {
-    color: '#fff',
-    fontSize: 14,
-    lineHeight: 20,
-    flex: 1,
-  },
-  arrowCircle: {
-    backgroundColor: '#8A4FFF',
-    height: 34,
-    width: 34,
-    borderRadius: 17,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: 12,
-  },
-  
-  // 🔹Profile Screen Styles
   profilecontainer: {
     flex: 1,
     backgroundColor: '#0E0E0E',
@@ -906,9 +841,140 @@ const AppStyles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
   },
-
   
-  // 🔹Settings Screen Styles
+  // =============================================
+  // 🔹 CUSTOM DRAWER
+  // =============================================
+  
+  scrollContent: {
+    paddingHorizontal: 16,
+    paddingTop: 20,
+  },
+  drawerheader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  drawerlogo: {
+    color: '#fff',
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  logoIcon: {
+    color: '#FFD700',
+  },
+  fireRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  fireIcon: {
+    fontSize: 16,
+    marginRight: 4,
+  },
+  fireText: {
+    color: '#fff',
+    fontSize: 14,
+  },
+  card: {
+    backgroundColor: '#1a1a1a',
+    borderRadius: 12,
+    padding: 16,
+    marginVertical: 16,
+    alignItems: 'center',
+  },
+  avatar: {
+    height: 60,
+    width: 60,
+    borderRadius: 30,
+    marginBottom: 10,
+  },
+  drawerusername: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  followRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '80%',
+    marginTop: 8,
+  },
+  followStat: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  followLabel: {
+    fontWeight: 'normal',
+    color: '#aaa',
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  miniCard: {
+    backgroundColor: '#1a1a1a',
+    borderRadius: 12,
+    padding: 12,
+    width: '48%',
+  },
+  cardLabel: {
+    color: '#aaa',
+    fontSize: 12,
+  },
+  connectText: {
+    color: '#8A4FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: 4,
+  },
+  walletText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: 4,
+  },
+  navSection: {
+    marginTop: 24,
+  },
+  drawerItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 14,
+  },
+  drawerItemText: {
+    color: '#fff',
+    marginLeft: 12,
+    fontSize: 16,
+  },
+  inviteCard: {
+    backgroundColor: '#1a1a1a',
+    borderRadius: 14,
+    padding: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    margin: 16,
+  },
+  inviteText: {
+    color: '#fff',
+    fontSize: 14,
+    lineHeight: 20,
+    flex: 1,
+  },
+  arrowCircle: {
+    backgroundColor: '#8A4FFF',
+    height: 34,
+    width: 34,
+    borderRadius: 17,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 12,
+  },
+  
+  // =============================================
+  // 🔹 SETTINGS SCREEN
+  // =============================================
+  
   settingcontainer: {
     flex: 1,
     backgroundColor: '#0a0a0a',
@@ -983,8 +1049,8 @@ const AppStyles = StyleSheet.create({
     marginTop: 4,
   },
   sectionWrapper: {
-  marginTop: 16,
-  paddingHorizontal: 5,
+    marginTop: 16,
+    paddingHorizontal: 5,
   },
   settingsectionTitle: {
     fontSize: 14,
@@ -994,6 +1060,37 @@ const AppStyles = StyleSheet.create({
     textTransform: 'uppercase',
     marginLeft: 20,
   },
+
+  watchlistCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#2a2a2a",
+    marginHorizontal: 16,
+    marginVertical: 8,
+    padding: 12,
+    borderRadius: 10,
+    elevation: 2 // For Android shadow
+  },
+  
+  watchlistLogo: {
+    width: 48,
+    height: 48,
+    resizeMode: "contain",
+    marginRight: 12
+  },
+
+  customHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    height: 80,
+    backgroundColor: "#6200EE",
+    paddingHorizontal: 15,
+  },
+  headerLeft: {
+    padding: 8,
+  },
+  
 });
 
 export default AppStyles;
