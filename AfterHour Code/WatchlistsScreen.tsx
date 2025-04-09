@@ -30,7 +30,7 @@ const WatchlistsScreen = () => {
         </TouchableOpacity>
         <Text style={AppStyles.headerTitle}>Watchlists</Text>
         <TouchableOpacity
-          onPress={() => navigation.navigate("AddWatchlists", { setWatchlists })}
+          onPress={() => navigation.navigate("AddWatchlists", { watchlists, setWatchlists })}
           style={AppStyles.headerRight}
         >
           <Icon name="add" size={24} color="#fff" />
@@ -57,7 +57,7 @@ const WatchlistsScreen = () => {
       {/* ✅ Floating (+) Button */}
       <TouchableOpacity
         style={AppStyles.floatingButton}
-        onPress={() => navigation.navigate("AddWatchlists", { setWatchlists })}
+        onPress={() => navigation.navigate("AddWatchlists", { watchlists, setWatchlists })}
       >
         <Ionicons name="add" size={30} color="white" />
       </TouchableOpacity>

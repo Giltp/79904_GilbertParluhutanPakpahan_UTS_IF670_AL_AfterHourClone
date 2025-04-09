@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import { useRoute, useNavigation, RouteProp } from "@react-navigation/native";
 import AppStyles from "./StyleSheets";
@@ -13,24 +13,37 @@ const stockLogos = {
   GOOGL: require("../assets/Stocks Logo/Google Stocks Logo.png"),
   AMZN: require("../assets/Stocks Logo/Amazon Stocks Logo.png"),
   META: require("../assets/Stocks Logo/Meta Stocks Logo.png"),
-  NFLX: require("../assets/Stocks Logo/Netflix Stocks Logo.png")
+  NFLX: require("../assets/Stocks Logo/Netflix Stocks Logo.png"),
 };
 
 type RootStackParamList = {
-  AddWatchlists: { setWatchlists: (watchlists: any) => void };
+  AddWatchlists: { watchlists: any[]; setWatchlists: (watchlists: any[]) => void };
 };
 
 const AddWatchlistsScreen = () => {
   const route = useRoute<RouteProp<RootStackParamList, "AddWatchlists">>();
   const navigation = useNavigation();
-  const { setWatchlists } = route.params;
+  const { watchlists, setWatchlists } = route.params;
 
-  const [availableStocks, setAvailableStocks] = useState(stocksData);
-  const [addedStocks, setAddedStocks] = useState<string[]>([]); // to track added
+  const [availableStocks, setAvailableStocks] = useState([]);
+  const [sessionAddedStocks, setSessionAddedStocks] = useState(new Set());
+
+  useEffect(() => {
+    // Filter out stocks that are already in the watchlist
+    const watchlistIds = new Set(watchlists.map((stock) => stock.id));
+    const filteredStocks = stocksData.filter((stock) => !watchlistIds.has(stock.id));
+    setAvailableStocks(filteredStocks);
+  }, [watchlists]);
 
   const addToWatchlist = (stock: any) => {
-    setWatchlists((prev: any[]) => [...prev, stock]);
-    setAddedStocks((prev) => [...prev, stock.id]);
+    setWatchlists((prev) => [...prev, stock]);
+    setSessionAddedStocks((prev) => new Set(prev).add(stock.id));
+  };
+
+  const handleClose = () => {
+    // Filter out stocks added during this session
+    setAvailableStocks((prev) => prev.filter((stock) => !sessionAddedStocks.has(stock.id)));
+    navigation.goBack();
   };
 
   return (
@@ -40,6 +53,7 @@ const AddWatchlistsScreen = () => {
       <FlatList
         data={availableStocks}
         keyExtractor={(item) => item.id}
+        ListEmptyComponent={<Text style={AppStyles.emptyText}>No more stocks to add.</Text>}
         renderItem={({ item }) => (
           <View style={AppStyles.joinChatCard}>
             <Image source={stockLogos[item.ticker]} style={AppStyles.chatLogo} />
@@ -55,10 +69,10 @@ const AddWatchlistsScreen = () => {
             <TouchableOpacity
               style={AppStyles.awiconButton}
               onPress={() => addToWatchlist(item)}
-              disabled={addedStocks.includes(item.id)}
+              disabled={sessionAddedStocks.has(item.id)}
             >
               <Icon
-                name={addedStocks.includes(item.id) ? "check" : "plus"}
+                name={sessionAddedStocks.has(item.id) ? "check" : "plus"}
                 size={20}
                 color="#a462ff"
               />
@@ -67,7 +81,10 @@ const AddWatchlistsScreen = () => {
         )}
       />
 
-      <TouchableOpacity style={AppStyles.closeButton} onPress={() => navigation.goBack()}>
+      <TouchableOpacity
+        style={AppStyles.closeButton}
+        onPress={handleClose}
+      >
         <Text style={AppStyles.closeButtonText}>Close</Text>
       </TouchableOpacity>
     </View>

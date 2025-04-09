@@ -47,7 +47,7 @@ const ChatListScreen = ({ navigation }) => {
       {/* ✅ Floating (+) Button to Open Join Chat */}
       <TouchableOpacity
         style={AppStyles.floatingButton}
-        onPress={() => navigation.navigate("JoinChat", { id: "some-id", setJoinedChats })}
+        onPress={() => navigation.navigate("JoinChat", { id: "some-id", setJoinedChats, joinedChats, })}
       >
         <Ionicons name="add" size={30} color="white" />
       </TouchableOpacity>
